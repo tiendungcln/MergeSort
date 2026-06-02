@@ -42,8 +42,6 @@ public class Level_4 {
 
             k++;
 
-
-
         }
 
         while (i < left.length){

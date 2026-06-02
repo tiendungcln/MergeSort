@@ -30,6 +30,7 @@ public class Level_1 {
             // Lần 1: i = mid = 3 => 3 - 3 = 0 => Bắt buộc mảng phải chạy từ 0
             // Lần 2: i = 4 => 4 - mid = 1
             // Lần 3: ......
+            // index mới = index cũ - vị trí bắt đầu của right
             right[i - mid] = arr[i];
         }
 
