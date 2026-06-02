@@ -1,12 +1,12 @@
 import java.util.Arrays;
 
-public class Level_2 {
-    // Merge 2 mảng đã sort
+public class Level_3 {
+    // Merge mảng dài hơn
     // Cho:
-    // left  = [2, 5]
-    // right = [1, 4]
+    // left  = [1, 3, 7]
+    // right = [2, 4, 5, 8]
     // Kết quả:
-    // [1, 2, 4, 5]
+    // [1, 2, 3, 4, 5, 7, 8]
 
     public static void mergeTwoSortedArrays(int[] left, int[] right){
 
@@ -18,22 +18,18 @@ public class Level_2 {
 
         while (i < left.length && j < right.length){
 
-            // so sánh 2 số đầu của 2 mảng, lấy số nhỏ hơn hoặc bằng, số lớn hơn ở lại để tiếp tục so sánh
             if (left[i] <= right[j]){
 
                 result[k] = left[i];
-                // Đã lấy left[i] đưa vào result nên chuyển sang phần tử tiếp theo của left
                 i++;
 
-            }else {
+            } else {
 
                 result[k] = right[j];
-                // Đã lấy right[j] đưa vào result nên chuyển sang phần tử tiếp theo của right
                 j++;
 
             }
 
-            // tăng lên để thêm số khác từ left hoặc right vào
             k++;
 
         }
@@ -41,6 +37,7 @@ public class Level_2 {
         while (i < left.length){
 
             result[k] = left[i];
+
             i++;
             k++;
 
@@ -49,6 +46,7 @@ public class Level_2 {
         while (j < right.length){
 
             result[k] = right[j];
+
             j++;
             k++;
 
@@ -60,10 +58,11 @@ public class Level_2 {
 
     public static void main(String[] args){
 
-        int[] left = {2, 5};
-        int[] right = {1, 4};
+        int[] left  = {1, 3, 7};
+        int[] right = {2, 4, 5, 8};
 
         mergeTwoSortedArrays(left, right);
 
     }
+
 }
