@@ -2,44 +2,6 @@ import java.util.Arrays;
 
 public class Level_6 {
 
-    public static int[] mergeSort(int[] arr){
-
-        if (arr.length <= 1){
-            return arr;
-        }
-
-        int mid = arr.length / 2;
-
-        int[] left = new int[mid];
-        int[] right = new int[arr.length - mid];
-
-        for (int i = 0; i < mid; i++){
-            left[i] = arr[i];
-        }
-
-        for (int i = mid; i < arr.length; i++){
-            right[i - mid] = arr[i];
-        }
-
-        // Đệ quy sort nửa bên trái
-        int[] sortedLeft = mergeSort(left);
-        // Đệ quy sort nửa bên phải
-        int[] sortedRight = mergeSort(right);
-
-        // Gộp 2 mảng đã sort và trả kết quả về
-        return merge(sortedLeft, sortedRight);
-
-        // Chia xuống:
-        // [5,2]
-        // [5] [2]
-
-        // Return lên:
-        // sortedLeft = [5]
-        // sortedRight = [2]
-        // merge([5], [2]) => [2,5]
-
-    }
-
     public static int[] merge(int[] left, int[] right){
 
         int[] result = new int[left.length + right.length];
@@ -75,6 +37,44 @@ public class Level_6 {
         }
 
         return result;
+
+    }
+
+    public static int[] mergeSort(int[] arr){
+
+        if (arr.length <= 1){
+            return arr;
+        }
+
+        int mid = arr.length / 2;
+
+        int[] left = new int[mid];
+        int[] right = new int[arr.length - mid];
+
+        for (int i = 0; i < mid; i++){
+            left[i] = arr[i];
+        }
+
+        for (int i = mid; i < arr.length; i++){
+            right[i - mid] = arr[i];
+        }
+
+        // Đệ quy sort nửa bên trái
+        int[] sortedLeft = mergeSort(left);
+        // Đệ quy sort nửa bên phải
+        int[] sortedRight = mergeSort(right);
+
+        // Gộp 2 mảng đã sort và trả kết quả về
+        return merge(sortedLeft, sortedRight);
+
+        // Chia xuống:
+        // [5,2]
+        // [5] [2]
+
+        // Return lên:
+        // sortedLeft = [5]
+        // sortedRight = [2]
+        // merge([5], [2]) => [2,5]
 
     }
 
