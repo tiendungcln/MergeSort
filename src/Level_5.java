@@ -17,7 +17,7 @@ public class Level_5 {
 
         System.out.println(Arrays.toString(arr));
 
-        if (arr.length == 1){
+        if (arr.length <= 1){
             return;
         }
 

@@ -4,7 +4,7 @@ public class Level_6 {
 
     public static int[] mergeSort(int[] arr){
 
-        if (arr.length == 1){
+        if (arr.length <= 1){
             return arr;
         }
 
